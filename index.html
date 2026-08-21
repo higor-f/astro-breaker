@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Astro-Breaker | Arcade Space Brick-Breaker</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="game-header">
+      <div class="logo">
+        <span class="logo-icon">🚀</span>
+        <span class="logo-title">ASTRO-BREAKER</span>
+        <span class="logo-badge">RETRO 8-BIT</span>
+      </div>
+      <div class="header-controls">
+        <button id="btnMute" class="arcade-btn active" title="Alternar Som">🔊 SOM: ON</button>
+        <button id="btnPause" class="arcade-btn" title="Pausar Jogo">⏸ PAUSAR</button>
+        <button id="btnScanlines" class="arcade-btn active" title="Efeito CRT">📺 CRT: ON</button>
+        <button id="btnFullscreen" class="arcade-btn" title="Tela Cheia">⛶ EXPANDIR</button>
+      </div>
+    </header>
+
+    <!-- Main Game Area -->
+    <main class="game-main">
+      <div class="game-wrapper">
+        <canvas id="gameCanvas"></canvas>
+        <div id="scanlines" class="scanlines-overlay active"></div>
+      </div>
+
+      <!-- Mobile Touch Controls -->
+      <div class="touch-controls">
+        <div class="touch-dpad">
+          <button id="btnTouchLeft" class="touch-btn" aria-label="Mover Esquerda">◀</button>
+          <button id="btnTouchRight" class="touch-btn" aria-label="Mover Direita">▶</button>
+        </div>
+        <div class="touch-actions">
+          <button id="btnTouchAction" class="touch-btn action-btn" aria-label="Ação / Tiro">⚡ AÇÃO</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer / Legend -->
+    <footer class="game-footer">
+      <div class="info-card">
+        <h3>CONTROLES</h3>
+        <p><strong>◄ ► ou A / D</strong> : Mover Nave</p>
+        <p><strong>ESPAÇO</strong> : Lançar Bola / Atirar Canhão Laser</p>
+        <p><strong>P</strong> : Pausar &nbsp;|&nbsp; <strong>M</strong> : Áudio</p>
+      </div>
+
+      <div class="info-card">
+        <h3>POWER-UPS (15% DROP)</h3>
+        <div class="powerup-list">
+          <span class="pu-badge laser">⚡ Laser: 10s</span>
+          <span class="pu-badge multi">✦ Multi-Ball: 3x</span>
+          <span class="pu-badge wide">⟷ Expand: 15s</span>
+          <span class="pu-badge life">♥ Vida Extra</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
